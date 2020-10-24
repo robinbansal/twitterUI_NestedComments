@@ -1,6 +1,8 @@
 .profile {
   flex: 0.435 1;
   background-color: white;
+  border-right: 1px solid #E6ECF0;
+  border-left: 1px solid #E6ECF0;
 }
 
 .feed {
@@ -29,7 +31,9 @@
   border-bottom-style: solid;
   background-color: white;
   position: fixed;
-  width: 39.6%;
+  width: 39.5%;
+  border-right: 1px solid #E6ECF0;
+  border-left: 1px solid #E6ECF0;
 }
 
 .backArrowDiv {
