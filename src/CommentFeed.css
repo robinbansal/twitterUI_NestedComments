@@ -29,3 +29,8 @@
     color: rgba(29, 161, 242, 1.00);
     transition-property: color;
 }
+
+.iconsDivComment .img:hover {
+    color: rgba(29, 161, 242, 1.00);
+    transition-property: color;
+}

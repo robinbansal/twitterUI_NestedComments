@@ -58,3 +58,18 @@
     align-items: center;
     line-height: 1.3125;
 }
+
+.activityIconDiv :hover {
+    color: rgba(29, 161, 242, 1.00);
+    transition-property: color;
+}
+
+.activityIconDiv :hover {
+    color: rgba(29, 161, 242, 1.00);
+    transition-property: color;
+}
+
+.activityIcons>img {
+    color: rgba(29, 161, 242, 1.00);
+    transition-property: color;
+}

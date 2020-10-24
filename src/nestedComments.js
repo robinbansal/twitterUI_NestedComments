@@ -1,7 +1,13 @@
 import React from "react";
-import FavoriteBorderOutlinedIcon from "@material-ui/icons/FavoriteBorderOutlined";
-import retweeticon from "./assets/icons8-retweet.svg";
 import "./nestedComments.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHeart,
+  faRetweet,
+  faComment,
+  faShare,
+} from "@fortawesome/free-solid-svg-icons";
+
 function searchTree(nodes, value, parents = []) {
   var result;
   nodes.some((o) => {
@@ -83,20 +89,18 @@ export function Comment({
             <div className="iconsDivNestedComments">
               <div
                 className="activityIconDiv"
-                onClick={() => {
-                  createComment(id);
-                }}
+                onClick={() => createComment(null)}
               >
-                <FavoriteBorderOutlinedIcon />
+                <i class="far fa-comment"></i>
               </div>
               <div className="activityIconDiv">
-                <img src={retweeticon} />{" "}
+                <i class="fas fa-retweet"></i>
               </div>
               <div className="activityIconDiv">
-                <FavoriteBorderOutlinedIcon />
+                <i class="far fa-heart"></i>
               </div>
               <div className="activityIconDiv">
-                <FavoriteBorderOutlinedIcon />
+                <i class="fas fa-share"></i>
               </div>
             </div>
           </div>
