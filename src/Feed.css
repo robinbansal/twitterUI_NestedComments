@@ -293,7 +293,9 @@
   color: rgba(29, 161, 242, 1);
   transition-property: background-color, box-shadow;
 }
-
+.formOuterDiv {
+  margin-top: 1rem;
+}
 .activityIcons svg:hover {
   color: rgba(29, 161, 242, 1);
   transition-property: color;

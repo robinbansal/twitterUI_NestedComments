@@ -15,7 +15,8 @@ const Feed = ({ parent, comment }) => {
   const [rawComments, setRawComments] = useState([
     {
       id: 1,
-      text: "Example comment here.",
+      text:
+        "I think Africans need to copy this format so we can curb the spread of Covid-19",
       author: "Robin",
       dateCreated: "Sept 21",
       parent_id: null,
@@ -27,7 +28,8 @@ const Feed = ({ parent, comment }) => {
     },
     {
       id: 2,
-      text: "Another example comment text.",
+      text:
+        "That's totally backwards. Someone NOT wearing a mask obviously don't have anything to hide.",
       author: "Aditya",
       dateCreated: "Sept 21",
       parent_id: 1,
@@ -39,7 +41,8 @@ const Feed = ({ parent, comment }) => {
     },
     {
       id: 3,
-      text: "Another example comment text.",
+      text:
+        "I think Africans need to copy this format so we can curb the spread of Covid-19.",
       author: "Rahul",
       dateCreated: "Sept 21",
       parent_id: 2,
@@ -80,7 +83,8 @@ const Feed = ({ parent, comment }) => {
     img_url:
       "https://pbs.twimg.com/profile_images/1308010958862905345/-SGZioPb_bigger.jpg",
     id: uuidv4(),
-    text: "Example comment here.",
+    text:
+      "I think Africans need to copy this format so we can curb the spread of Covid-19.",
     author: "robin",
     dateCreated: "Sept 21",
     parent_id: null,
@@ -140,7 +144,7 @@ const Feed = ({ parent, comment }) => {
             src="https://abs-0.twimg.com/emoji/v2/svg/1f4cd.svg"
             className="pinIcon"
           />
-          <p className="headingText"> {comment}</p>
+          <p className="headingText"> New Jersey</p>
         </div>
         <div className="emoticonMentionDiv">
           <div className="emoticonDiv">
@@ -274,7 +278,7 @@ function CreateCommentModal({ createComment, closePopup, parentComment }) {
               </div>
             </div>
           </div>
-          <div>
+          <div className="formOuterDiv">
             <div className="col-3"></div>
             <div className="col-9 formdiv">
               <form
