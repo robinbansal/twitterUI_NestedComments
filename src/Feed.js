@@ -289,13 +289,17 @@ function CreateCommentModal({ createComment, closePopup, parentComment }) {
                   }
                 }}
               >
-                <input
+                <textarea
+                  rows="8"
+                  cols="32"
                   type="text"
-                  className="inputBox col-9"
+                  className="inputBox col-12"
                   placeholder="Tweet your reply"
                   onChange={(e) => setCommentText(e.target.value)}
                 />
-                <button type="submit">Post</button>
+                <button className="replyBtn" type="submit">
+                  Reply
+                </button>
               </form>
             </div>
           </div>

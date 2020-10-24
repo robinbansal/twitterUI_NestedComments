@@ -16,7 +16,7 @@
 .formdiv {
   width: 503px;
   height: 204px;
-  margin-left: 78px;
+  margin-left: 70px;
 }
 
 .fixedTop {
@@ -307,4 +307,19 @@
 
 .activityIcons {
   width: 100%;
+}
+.replyBtn {
+  color: rgb(255, 255, 255);
+  background-color: rgb(29, 161, 242);
+  min-width: calc(62.79px);
+  margin-left: 10px;
+  min-height: 39px;
+  outline-style: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 1px;
+  opacity: 0.5;
+  border-style: solid;
+  border-radius: 9999px;
 }
