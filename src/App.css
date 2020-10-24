@@ -1,16 +1,23 @@
 .App {
-  text-align: center;
+  display: flex;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+  justify-content: center;
+  flex: 0.435 1;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.nestedFeeds {
+  flex: 0.435 1;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tweetFeed {
+  border-right: 1px solid #E6ECF0;
+  border-left: 1px solid #E6ECF0;
+  max-width: 600px;
 }
 
 .App-header {
@@ -32,6 +39,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

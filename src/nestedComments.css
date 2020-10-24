@@ -1,0 +1,60 @@
+.iconsDivNestedComments {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #e6ecf0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    max-width: 425px;
+}
+
+.authorNameDivNestedComments {
+    display: flex;
+    flex-direction: row;
+}
+
+.dateNestedComments {
+    display: flex;
+    align-items: center;
+    color: rgb(101, 119, 134);
+}
+
+.feedNestedComment {
+    display: flex;
+    flex: 0.4;
+    margin-top: 3rem;
+    overflow-y: scroll;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.headingNestedCommentsDiv {
+    width: 100%;
+}
+
+.headingNestedComments {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.profileNestedComments {
+
+    flex: 0.435 1;
+    background-color: white;
+    padding-top: 10px;
+}
+
+.headingTextNestedComments {
+    line-height: 1.3125;
+    margin: 0;
+    font-weight: 500;
+}
+
+.emoticonMentionDivNestedComments {
+    display: flex;
+    align-items: center;
+    line-height: 1.3125;
+}

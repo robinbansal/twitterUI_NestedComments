@@ -1,0 +1,31 @@
+.logoColumn {
+    margin-right: 10px;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-basis: 49px;
+}
+
+
+.timeline {
+    width: 2px;
+    background-color: rgb(204, 214, 221);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+.iconsDivComment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #E6ECF0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.iconsDivComment svg:hover {
+    color: rgba(29, 161, 242, 1.00);
+    transition-property: color;
+}
