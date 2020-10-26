@@ -323,3 +323,6 @@
   border-style: solid;
   border-radius: 9999px;
 }
+.replyBtn:hover {
+  opacity: 1;
+}
