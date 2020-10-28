@@ -10,6 +10,21 @@ import {
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
 
+const postData = {
+  img_url:
+    "https://pbs.twimg.com/profile_images/1308010958862905345/-SGZioPb_bigger.jpg",
+  id: uuidv4(),
+  text:
+    "I think Africans need to copy this format so we can curb the spread of Covid-19.",
+  author: "robin",
+  dateCreated: "Sept 21",
+  parent_id: null,
+  likes: 5,
+  retweets: 0,
+  author_name: "Robin Bansal",
+  author_profile_pic:
+    "https://pbs.twimg.com/profile_images/875392068125769732/yrN-1k0Y_bigger.jpg",
+};
 const Feed = ({ parent, comment }) => {
   const [comments, setComments] = useState([]);
   const [rawComments, setRawComments] = useState([
@@ -79,31 +94,23 @@ const Feed = ({ parent, comment }) => {
   ]);
   const [commentParentId, setCommentParentId] = useState(null);
   const [open, setOpen] = useState(false);
-  const [parentData, setParentData] = useState({
-    img_url:
-      "https://pbs.twimg.com/profile_images/1308010958862905345/-SGZioPb_bigger.jpg",
-    id: uuidv4(),
-    text:
-      "I think Africans need to copy this format so we can curb the spread of Covid-19.",
-    author: "robin",
-    dateCreated: "Sept 21",
-    parent_id: null,
-    likes: 5,
-    retweets: 0,
-    author_name: "Robin Bansal",
-    author_profile_pic:
-      "https://pbs.twimg.com/profile_images/875392068125769732/yrN-1k0Y_bigger.jpg",
-  });
 
   const handleClose = () => {
     setOpen(false);
   };
   useEffect(() => {
     if (rawComments && rawComments.length > 0) {
-      setComments(nest(rawComments));
+      const nested = nest(rawComments);
+      // console.log("nested", nested);
+      setComments(nested);
     }
   }, [rawComments]);
 
+  useEffect(() => {
+    if (!commentParentId) {
+      window.location.hash = commentParentId;
+    }
+  }, [commentParentId]);
   const nest = (items, id = null, link = "parent_id") =>
     items
       .filter((item) => item[link] === id)
@@ -111,6 +118,7 @@ const Feed = ({ parent, comment }) => {
 
   const createComment = (id) => {
     setOpen(true);
+    // console.log("comment parent ID:", commentParentId);
     setCommentParentId(id);
   };
 
@@ -118,6 +126,11 @@ const Feed = ({ parent, comment }) => {
   const date =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
   // const [todayDate, setTodayDate] = useState([today]);
+
+  const findParentComment = () => {
+    return rawComments.find((rc) => rc.id == commentParentId) || postData;
+  };
+
   return (
     <div className="profile feeds">
       <div className="feed">
@@ -206,9 +219,7 @@ const Feed = ({ parent, comment }) => {
 
         {open && (
           <CreateCommentModal
-            parentComment={
-              rawComments.find((rc) => rc.id == commentParentId) || parentData
-            }
+            parentComment={findParentComment()}
             createComment={(text) => {
               setRawComments((existingComments) => {
                 return [
@@ -227,6 +238,7 @@ const Feed = ({ parent, comment }) => {
               });
               setTimeout(() => {
                 setOpen(false);
+                setCommentParentId(null);
               }, 500);
             }}
             closePopup={handleClose}
@@ -239,13 +251,12 @@ const Feed = ({ parent, comment }) => {
 
 function CreateCommentModal({ createComment, closePopup, parentComment }) {
   const [commentText, setCommentText] = useState("");
+  const [parentCommentData, setParentCommentData] = useState({});
   useEffect(() => {
-    return () => {
-      setCommentText("");
-    };
-    console.log(parentComment);
-  }, []);
-  console.log(parentComment);
+    setCommentText("");
+    setParentCommentData(parentComment);
+  }, [parentComment]);
+
   return (
     <div className="popupBox">
       <div className="popupDiv">
@@ -262,19 +273,21 @@ function CreateCommentModal({ createComment, closePopup, parentComment }) {
             <div className="col-3 popupProfileImgDiv">
               <img
                 className="popupProfileImg"
-                src={parentComment.author_profile_pic}
+                src={parentCommentData.author_profile_pic}
               />
             </div>
             <div className="col-9">
               <div className="popupAuthorDiv">
-                <p className="popUpText popUpTextH">{parentComment.author}</p>
+                <p className="popUpText popUpTextH">
+                  {parentCommentData.author}
+                </p>
                 <p className="popUpdate point"> • </p>
                 <p className="popUpText popUpdate">
-                  {parentComment.dateCreated}
+                  {parentCommentData.dateCreated}
                 </p>
               </div>
               <div>
-                <p className="popUpText">{parentComment.text}</p>
+                <p className="popUpText">{parentCommentData.text}</p>
               </div>
             </div>
           </div>

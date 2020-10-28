@@ -58,7 +58,7 @@ export function Comment({
   };
 
   return (
-    <div>
+    <div id={id}>
       <div className="profileNestedComments feeds">
         <div className="feedNestedComment commentFeed">
           <div>
@@ -89,7 +89,7 @@ export function Comment({
             <div className="iconsDivNestedComments">
               <div
                 className="activityIconDiv"
-                onClick={() => createComment(null)}
+                onClick={() => createComment(id)}
               >
                 <i class="far fa-comment"></i>
               </div>
